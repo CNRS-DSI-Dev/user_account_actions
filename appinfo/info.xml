@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<info>
+    <id>user_account_actions</id>
+    <name>User Account Actions</name>
+    <description>Send mails on users creation / deletion</description>
+    <version>1.0</version>
+    <licence>AGPLv3</licence>
+    <author>Patrick Paysant / CNRS DSI</author>
+    <require>7</require>
+</info>
