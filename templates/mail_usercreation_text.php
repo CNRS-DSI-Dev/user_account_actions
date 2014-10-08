@@ -8,7 +8,7 @@
  */
 
     print_unescaped($l->t("User %s just has been created (%s)\n", array($_['userUID'], $_['datetime'])));
-    print_unescaped($l->t("Home directory : %s.\n\n", array($_['home'])));
+    print_unescaped($l->t("Home directory: %s.\n\n", array($_['home'])));
 ?>
 
 --

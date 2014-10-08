@@ -22,7 +22,7 @@
 <td style="font-weight:normal; font-size:0.8em; line-height:1.2em; font-family:verdana,'arial',sans;">
 <?php
     print_unescaped($l->t("<p>User %s just has been created (%s)</p>\n", array($_['userUID'], $_['datetime'])));
-    print_unescaped($l->t("<p>Home directory : %s.</p>\n<br/>\n", array($_['home'])));
+    print_unescaped($l->t("<p>Home directory: %s.</p>\n<br/>\n", array($_['home'])));
 ?>
 </td>
 </tr>
