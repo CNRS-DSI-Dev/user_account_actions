@@ -7,4 +7,7 @@
     <licence>AGPLv3</licence>
     <author>Patrick Paysant / CNRS DSI</author>
     <require>7</require>
+    <types>
+    	<prelogin/>
+    </types>
 </info>
