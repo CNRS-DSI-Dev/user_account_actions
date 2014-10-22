@@ -1,6 +1,6 @@
 <?php $TRANSLATIONS = array(
-'User %s just has been created (%s)' => "L'utilisateur %s vient d'être créé (%s)",
-'User %s just has been deleted (%s)' => "L'utilisateur %s vient d'être supprimé (%s)",
+'%s - User %s just has been created (%s)' => "%s - L'utilisateur %s vient d'être créé (%s)",
+'%s - User %s just has been deleted (%s)' => "%s - L'utilisateur %s vient d'être supprimé (%s)",
 "<p>User %s just has been created (%s)</p>\n" => "<p>L'utilisateur %s vient d'être créé (%s)</p>",
 "<p>Home directory: %s.</p>\n<br/>\n" => "<p>Dossier utilisateur : %s.</p>\n<br/>\n",
 "User %s just has been created (%s)\n" => "L'utilisateur %s vient d'être créé (%s)\n",

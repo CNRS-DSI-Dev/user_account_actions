@@ -37,9 +37,11 @@ Class MailAction
     {
         $toAddress = $toName = $this->config->getSystemValue('monitoring_admin_email');
 
+        $theme = new \OC_Defaults;
+
         $now = new \DateTime();
         $niceNow = date_format($now, 'd/m/Y H:i:s');
-        $subject = (string)$this->l->t('User %s just has been created (%s)', array($user->getUID(), $niceNow));
+        $subject = (string)$this->l->t('%s - User %s just has been created (%s)', array($theme->getTitle(), $user->getUID(), $niceNow));
 
         $html = new \OCP\Template($this->appName, "mail_usercreation_html", "");
         $html->assign('userUID', $user->getUID());
@@ -70,9 +72,11 @@ Class MailAction
     {
         $toAddress = $toName = $this->config->getSystemValue('monitoring_admin_email');
 
+        $theme = new \OC_Defaults;
+
         $now = new \DateTime();
         $niceNow = date_format($now, 'd/m/Y H:i:s');
-        $subject = (string)$this->l->t('User %s just has been deleted (%s)', array($user->getUID(), $niceNow));
+        $subject = (string)$this->l->t('%s - User %s just has been deleted (%s)', array($theme->getTitle(), $user->getUID(), $niceNow));
 
         $html = new \OCP\Template($this->appName, "mail_userdeletion_html", "");
         $html->assign('userUID', $user->getUID());
