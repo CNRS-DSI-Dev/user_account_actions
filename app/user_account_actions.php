@@ -14,6 +14,7 @@ use \OCP\AppFramework\App;
 
 use \OCA\User_Account_Actions\Hooks\UserHooks;
 use \OCA\User_Account_Actions\Lib\MailAction;
+use \OCA\User_Account_Actions\Lib\FileAction;
 
 class User_Account_Actions extends App
 {
@@ -42,6 +43,14 @@ class User_Account_Actions extends App
          */
         $container->registerService('MailAction', function($c) {
             return new MailAction(
+                $c->query('AppName'),
+                $c->query('L10N'),
+                $c->query('Config')
+            );
+        });
+
+        $container->registerService('FileAction', function($c) {
+            return new FileAction(
                 $c->query('AppName'),
                 $c->query('L10N'),
                 $c->query('Config')

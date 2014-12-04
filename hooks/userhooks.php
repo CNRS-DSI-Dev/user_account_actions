@@ -16,12 +16,20 @@ class UserHooks {
         $this->mailAction->mailUserCreation($user);
     }
 
+    public function preDeleteUser(\OC\User\User $user) {
+        $this->fileAction->saveUserFiles($user);
+    }
+
     public function postDeleteUser(\OC\User\User $user) {
         $this->mailAction->mailUserDeletion($user);
     }
 
     public function register() {
         $myself = $this;
+
+        $this->userManager->listen('\OC\User', 'predelete', function(\OC\User\User $user) use ($myself) {
+            return $this->preDeleteUser($user);
+        });
 
         $this->userManager->listen('\OC\User', 'postDelete', function(\OC\User\User $user) use ($myself) {
             return $this->postDeleteUser($user);
