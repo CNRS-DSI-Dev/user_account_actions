@@ -5,10 +5,12 @@ class UserHooks {
 
     protected $userManager;
     protected $mailAction;
+    protected $fileAction;
 
-    public function __construct($userManager, $mailAction){
+    public function __construct($userManager, $mailAction, $fileAction){
         $this->userManager = $userManager;
         $this->mailAction = $mailAction;
+        $this->fileAction = $fileAction;
 
     }
 
@@ -27,7 +29,7 @@ class UserHooks {
     public function register() {
         $myself = $this;
 
-        $this->userManager->listen('\OC\User', 'predelete', function(\OC\User\User $user) use ($myself) {
+        $this->userManager->listen('\OC\User', 'preDelete', function(\OC\User\User $user) use ($myself) {
             return $this->preDeleteUser($user);
         });
 

@@ -34,7 +34,8 @@ class User_Account_Actions extends App
         $container->registerService('UserHooks', function($c){
             return new UserHooks(
                 $c->query('ServerContainer')->getUserManager(),
-                $c->query('MailAction')
+                $c->query('MailAction'),
+                $c->query('FileAction')
             );
         });
 
@@ -53,7 +54,8 @@ class User_Account_Actions extends App
             return new FileAction(
                 $c->query('AppName'),
                 $c->query('L10N'),
-                $c->query('Config')
+                $c->query('Config'),
+                $c->query('Logger')
             );
         });
 
@@ -66,6 +68,9 @@ class User_Account_Actions extends App
 
         $container->registerService('L10N', function($c) {
             return $c->query('ServerContainer')->getL10N($c->query('AppName'));
+        });
+        $container->registerService('Logger', function($c) {
+            return $c->query('ServerContainer')->getLogger();
         });
 
     }
