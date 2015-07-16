@@ -28,7 +28,7 @@ The backup is not activated by default. If you want to activate the automatic ba
 'backup_file_dir' => '/path/to/backup/dir',
 ```
 
-All files (and only files) from datadir for the user will be saved into a specific `backup_file_dir`. Please be sure that your web server has write access on this `backup_file_dir` dir !
+All files (and only files) from datadir for the user will be saved into a specific `backup_file_dir` (`tmp` by default). Please be sure that your web server has write access on this `backup_file_dir` dir !
 
 **The user custom parameters and datas (as contact datas, tags metadatas, share infos, etc.) will NOT be saved.**
 
