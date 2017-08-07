@@ -20,14 +20,8 @@ class UserHooks {
         // if user's uid (username) is a email, additional treatments :
         if(filter_var($user->getUID(), FILTER_VALIDATE_EMAIL)) {
 
-            // add the email on oc_preferences
-            \OCP\Config::setUserValue($user->getUID(), 'settings', 'email', $user->getUID());
-
             // set email value on user's account
             $user->setEMailAddress($user->getUID());
-
-            // add the IsLocal on oc_preferences to know the user's account's type
-            \OCP\Config::setUserValue($user->getUID(), 'settings', 'IsLocal', 1);
         }
 
     }
