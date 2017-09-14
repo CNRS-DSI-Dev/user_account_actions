@@ -20,12 +20,10 @@ class UserHooks {
         // if user's uid (username) is a email, additional treatments :
         if(filter_var($user->getUID(), FILTER_VALIDATE_EMAIL)) {
 
-            // add the email on oc_preferences
-            \OCP\Config::setUserValue($user->getUID(), 'settings', 'email', $user->getUID());
-
-            // add the IsLocal on oc_preferences to know the user's account's type
-            \OCP\Config::setUserValue($user->getUID(), 'settings', 'IsLocal', TRUE);
+            // set email value on user's account
+            $user->setEMailAddress($user->getUID());
         }
+
     }
 
     public function preDeleteUser(\OC\User\User $user) {
@@ -38,7 +36,6 @@ class UserHooks {
 
     public function register() {
         $myself = $this;
-
         $this->userManager->listen('\OC\User', 'preDelete', function(\OC\User\User $user) use ($myself) {
             return $this->preDeleteUser($user);
         });
